@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Sample data
+data = pd.DataFrame({'Study_Hours': [1, 2, 3, 4, 5, 6], 'Exam_Score': [50, 55, 65, 70, 75, 85]})
+
+# Correlation
+correlation = data.corr().iloc[0, 1]
+print("Correlation:", round(correlation, 2))
+
+# Visualization
+sns.regplot(x='Study_Hours', y='Exam_Score', data=data)
+plt.title("Study Time vs Exam Score")
+plt.xlabel("Study Hours")
+plt.ylabel("Exam Score")
+plt.grid(True)
+plt.show()

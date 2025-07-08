@@ -1,0 +1,5 @@
+from sklearn.cluster import KMeans
+
+X = [[2, 100], [3, 150], [10, 400], [1, 50], [8, 350]]
+model = KMeans(n_clusters=2, random_state=1).fit(X)
+print("Labels:", model.labels_)

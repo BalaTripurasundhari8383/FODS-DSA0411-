@@ -1,0 +1,5 @@
+import pandas as pd
+
+data = pd.DataFrame({'Close': [100, 102, 101, 105, 107]})
+returns = data['Close'].pct_change().dropna()
+print("Std Dev:", returns.std())

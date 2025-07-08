@@ -1,0 +1,8 @@
+from sklearn.tree import DecisionTreeRegressor
+
+X = [[20000, 5], [30000, 3], [15000, 10], [25000, 4]]
+y = [5, 7, 3, 6]  # Prices in lakhs
+
+model = DecisionTreeRegressor().fit(X, y)
+new_car = [[22000, 4]]
+print("Predicted Price:", model.predict(new_car)[0], "Lakhs")

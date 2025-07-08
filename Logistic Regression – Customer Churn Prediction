@@ -1,0 +1,13 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+
+X = [[300, 12], [450, 24], [200, 6], [500, 36], [100, 3]]
+y = [0, 0, 1, 0, 1]
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+model = LogisticRegression().fit(X_scaled, y)
+new_customer = scaler.transform([[350, 18]])
+print("Churn?" , model.predict(new_customer)[0])
